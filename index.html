@@ -68,6 +68,173 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-LearnMarkdown" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/06/LearnMarkdown/" class="article-date">
+  <time datetime="2020-03-06T14:47:00.000Z" itemprop="datePublished">2020-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/06/LearnMarkdown/">Markdown标记语言的使用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是一种纯文本格式的标记语言<br>可以通过简单的标记语法，使普通文本内容具有一定的格式</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在想要设置为标题的文字前面加上号来表示</p>
+<p>一个是一级标题，字号最大，两个是二级标题，以此类推，共支持六级标题</p>
+<p>标准语法一般是在号后面跟个空格再写文字</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><strong>加粗</strong>：在要加粗的字体左右分别用两个*号包起来</p>
+<p><em>斜体</em>：在要倾斜的文字左右分别用一个*号或者用_包起来</p>
+<p><strong><em>斜体加粗</em></strong>：在要倾斜并加粗的文字左右分别用三个*号包起来</p>
+<p><del>删除线</del>：在要加删除线的文字左右分别用两个~~号包起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**加粗字体**</span><br><span class="line">*斜体字体*或者_斜体字体_</span><br><span class="line">***斜体加粗字体***</span><br><span class="line">~~有删除线字体~~</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>在需要引用的文字前面加&gt;即可。</p>
+<p>引用可以嵌套使用，即两个&gt;&gt;或&gt;&gt;&gt;等等。</p>
+<p>注：取消引用换行按Enter即可。</p>
+<blockquote>
+<p>这是一个&gt;引用的内容</p>
+<blockquote>
+<p>这是第二个&gt;引用的内容</p>
+<blockquote>
+<p>等等</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>三个或三个以上的-或者*都可以。</p>
+<p>两者效果相同</p>
+<p>//—</p>
+<p>//***</p>
+<hr>
+<hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>语法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">图片alt</span>](<span class="link">图片地址"图片title"</span>)</span><br><span class="line"></span><br><span class="line">图片alt是显示在图片下面的文字，相当于对图片内容的解释</span><br><span class="line">图片title就是图片的标题，当鼠标移到图片上时显示的内容，可加可不加</span><br></pre></td></tr></table></figure>
+
+<p>注：如果是上传的本地图片的话可直接拖进去</p>
+<p><img src="picture/Example.png" alt="最美的场景"></p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>语法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[超链接名]（超链接地址"超链接title"）</span><br><span class="line">title可加可不加</span><br></pre></td></tr></table></figure>
+
+<p>注：区别图片和超链接的区别，图片最前面要加！，超链接不用</p>
+<p><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>无序列表可以使用- ，+， * 三种符号中的任何一种</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br></pre></td></tr></table></figure>
+
+<p>注：- + *跟内容之间都要有一个空格，可通过回车键（enter）复制多行，再按回车键即可取消</p>
+<ul>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容</li>
+</ul>
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>数字加点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 首先</span><br><span class="line">2. 其次</span><br><span class="line">3. 最后</span><br></pre></td></tr></table></figure>
+
+<p>注：序号和内容之间也是要有空格</p>
+<ol>
+<li>首先</li>
+<li>其次</li>
+<li>最后</li>
+</ol>
+<h4 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h4><p>上一级和下一级之间敲三个空格即可</p>
+<ul>
+<li>一级 <ul>
+<li>二级<ul>
+<li>三级</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>一级<ol>
+<li>二级<ol start="3">
+<li>三级</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">|表头|表头|表头|</span><br><span class="line">| --- | --- | --- |</span><br><span class="line">|第一行|第二行|第三行|</span><br><span class="line">第二行分割表头和内容</span><br><span class="line">- 有一个就行，为了对其，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">-两边加：文字居中</span><br><span class="line">-右边加：文字居右</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">周一</th>
+<th align="center">周二</th>
+<th align="center">周三</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">语文</td>
+<td align="center">英语</td>
+<td align="center">化学</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">数学</td>
+<td align="center">物理</td>
+<td align="center">生物</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">物理</td>
+<td align="center">数学</td>
+<td align="center">英语</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>语法：</p>
+<p>单行代码：代码之间分别用一个反引号包起来</p>
+<p><code>代码内容</code>  </p>
+<p>多行代码：代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p>未完待续。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://alateer.github.io/2020/03/06/LearnMarkdown/" data-id="ck7h7x4ju0000mcsrgqmpep9o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LearnGit" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/06/LearnGit/" class="article-date">
@@ -82,7 +249,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/06/LearnGit/">LearnGit</a>
+      <a class="article-title" href="/2020/03/06/LearnGit/">学习Git</a>
     </h1>
   
 
@@ -90,11 +257,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习Git"><a href="#学习Git" class="headerlink" title="学习Git"></a>学习Git</h1><h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><ol>
+        <h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><ol>
 <li>在一个适当的地方创建一个空目录（命令包括：mkdir、cd、pwd）</li>
 <li>通过<code>git init</code>命令把这个目录变成Git可以管理的仓库（目录中包含一个隐藏文件.git)</li>
 <li>把想要添加的文件添加到git仓库中，分为两步<br>1）使用<code>git add 文件</code>命令告诉git把文件添加到仓库中；<br>2)使用命令<code>git commit -m &quot;描述提交文件的说明&quot;</code>告诉git，把文件提交到仓库</li>
 </ol>
+<h2 id="仓库状态与修改查看"><a href="#仓库状态与修改查看" class="headerlink" title="仓库状态与修改查看"></a>仓库状态与修改查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
+<p>该命令用于让我们时刻掌握仓库目前的状态，是否有文件被修改或被提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff 含有修改内容的文件</span><br></pre></td></tr></table></figure>
+<p>查看difference，即修改的内容</p>
+<h2 id="版本查看及版本回退"><a href="#版本查看及版本回退" class="headerlink" title="版本查看及版本回退"></a>版本查看及版本回退</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p>显示最近到最远的提交日志（即提交过的不同版本）<br>如果日志数量太多，可以加上<code>--pretty=oneline</code>参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<p>在git中，用HEAD表示当前版本，每个版本都有一个对应的commit id（一大长串的16进制数）<br>上一个版本就是HEAD^，上上一个是HEAD^^，大一些的往上版本可以写成HEAD~xxx<br>git reset命令作用是回退版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+<p>记录每一次的命令<br>可用于找到恢复版本的commit id，以便于查找<br>注：<code>cat filename</code>用于查看文本文件内容</p>
+<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><blockquote>
+<p>工作区（working directory)：就是电脑中能看到的目录，比如一个learngit文件夹就是一个工作区<br>版本库（repository)：在工作区中含有隐藏文件.git，这就不是工作区，是git的版本库<br>暂存区（stage or index)：存在于git版本库中最重要的东西<br>另git还为版本库中创建了第一个分支master，以及指向master的一个指针HEAD<br>命令git add是把文件从工作区添加到暂存区<br>命令git commit提交更改，实际就是把暂存区的所有内容提交到当前分支（可见分支可建多个）、<br>需要提交的文件修改通通放到暂存区，然后一次性提交暂存区的所有修改</p>
+</blockquote>
+<p>##修改的管理与撤销<br>可以通过使用<code>git diff HEAD -- filename</code>命令查看工作区和版本库在最新版中的区别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -- file</span><br></pre></td></tr></table></figure>
+<p>该命令用于当你修改了工作区的某个文件内容后，想丢弃这个修改时</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>该命令用于当你的修改已经add到了暂存区，把文件重新退回到工作区，再使用checkout命令放弃修改</p>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>在没有将文件添加到版本库之前（add and commit），一般的文件删除使用<code>rm filename</code>即可，该文件就会被完全删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rm filename</span><br></pre></td></tr></table></figure>
+<p>该命令用于删除已经提交到版本库的文件（执行该命令后，再commit一下）<br>若文件提交到版本库后，删除掉了工作区的文件，则使用恢复命令checkout即可</p>
 
       
     </div>
@@ -291,7 +479,11 @@
       <ul>
         
           <li>
-            <a href="/2020/03/06/LearnGit/">LearnGit</a>
+            <a href="/2020/03/06/LearnMarkdown/">Markdown标记语言的使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/06/LearnGit/">学习Git</a>
           </li>
         
           <li>
