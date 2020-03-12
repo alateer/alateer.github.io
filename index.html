@@ -90,7 +90,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是一种纯文本格式的标记语言<br>可以通过简单的标记语法，使普通文本内容具有一定的格式</p>
+        <h1 id="Markdown标记语言的使用方法"><a href="#Markdown标记语言的使用方法" class="headerlink" title="Markdown标记语言的使用方法"></a>Markdown标记语言的使用方法</h1><ul>
+<li>这是一种纯文本格式的标记语言</li>
+<li>可以通过简单的标记语法，使普通文本内容具有一定的格式</li>
+</ul>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在想要设置为标题的文字前面加上号来表示</p>
 <p>一个是一级标题，字号最大，两个是二级标题，以此类推，共支持六级标题</p>
 <p>标准语法一般是在号后面跟个空格再写文字</p>
@@ -272,10 +275,16 @@
 <p>在git中，用HEAD表示当前版本，每个版本都有一个对应的commit id（一大长串的16进制数）<br>上一个版本就是HEAD^，上上一个是HEAD^^，大一些的往上版本可以写成HEAD~xxx<br>git reset命令作用是回退版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
 <p>记录每一次的命令<br>可用于找到恢复版本的commit id，以便于查找<br>注：<code>cat filename</code>用于查看文本文件内容</p>
-<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><blockquote>
-<p>工作区（working directory)：就是电脑中能看到的目录，比如一个learngit文件夹就是一个工作区<br>版本库（repository)：在工作区中含有隐藏文件.git，这就不是工作区，是git的版本库<br>暂存区（stage or index)：存在于git版本库中最重要的东西<br>另git还为版本库中创建了第一个分支master，以及指向master的一个指针HEAD<br>命令git add是把文件从工作区添加到暂存区<br>命令git commit提交更改，实际就是把暂存区的所有内容提交到当前分支（可见分支可建多个）、<br>需要提交的文件修改通通放到暂存区，然后一次性提交暂存区的所有修改</p>
-</blockquote>
-<p>##修改的管理与撤销<br>可以通过使用<code>git diff HEAD -- filename</code>命令查看工作区和版本库在最新版中的区别</p>
+<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><ul>
+<li>工作区（working directory)：就是电脑中能看到的目录，比如一个learngit文件夹就是一个工作区</li>
+<li>版本库（repository)：在工作区中含有隐藏文件.git，这就不是工作区，是git的版本库</li>
+<li>暂存区（stage or index)：存在于git版本库中最重要的东西</li>
+<li>另git还为版本库中创建了第一个分支master，以及指向master的一个指针HEAD</li>
+<li>命令git add是把文件从工作区添加到暂存区</li>
+<li>命令git commit提交更改，实际就是把暂存区的所有内容提交到当前分支（可见分支可建多个）、</li>
+<li>需要提交的文件修改通通放到暂存区，然后一次性提交暂存区的所有修改</li>
+</ul>
+<h2 id="修改的管理与撤销"><a href="#修改的管理与撤销" class="headerlink" title="修改的管理与撤销"></a>修改的管理与撤销</h2><p>可以通过使用<code>git diff HEAD -- filename</code>命令查看工作区和版本库在最新版中的区别</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -- file</span><br></pre></td></tr></table></figure>
 <p>该命令用于当你修改了工作区的某个文件内容后，想丢弃这个修改时</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
@@ -283,6 +292,55 @@
 <h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>在没有将文件添加到版本库之前（add and commit），一般的文件删除使用<code>rm filename</code>即可，该文件就会被完全删除</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rm filename</span><br></pre></td></tr></table></figure>
 <p>该命令用于删除已经提交到版本库的文件（执行该命令后，再commit一下）<br>若文件提交到版本库后，删除掉了工作区的文件，则使用恢复命令checkout即可</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p> 远程仓库一般使用github来进行远程同步，可以将本地仓库的更改更新到远程的guthub仓库，也可以克隆最新的仓库更新到本地<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@server-name:path/repo-name.git</span><br><span class="line">$ git push -u origin master</span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure><br>第一个命令用于关联一个远程库，origin是一个默认远程库名<br>第二个命令用于第一次推送master分支的所有内容<br>第三个命令只需在想更新2推送最新修改时使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@server-name:path/repo-name.git</span><br></pre></td></tr></table></figure>
+<p>该命令用于克隆一个仓库<br>git支持多种协议，包括https，但通过ssh支持的原生git协议速度更快</p>
+<h2 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h2><ul>
+<li>分支创建（两种方法）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line"></span><br><span class="line">$ git branch dev</span><br><span class="line">$ git checkout dev</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>-b参数表示创建并切换</p>
+<ul>
+<li>查看当前分支命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>*号标出的分支即为当前分支</p>
+<ul>
+<li><p>将子分支的工作合并到master分支上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br></pre></td></tr></table></figure>
+<p>前提是当前分支是master，要合并的是dev</p>
+</li>
+<li><p>删除分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><ul>
+<li><code>git branch -v</code>命令可以查看每一个分支的最后一次提交</li>
+<li>检测那些分支是否提交到当前分支上<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --merged</span><br><span class="line">$ git branch --no-merged</span><br></pre></td></tr></table></figure>
+第一个命令查看那些分支已经合并到当前分支（即可以删除）<br>第二个命令查看哪些分支还未合并到当前分支（删除会有提示）</li>
+</ul>
+<h2 id="分支保存"><a href="#分支保存" class="headerlink" title="分支保存"></a>分支保存</h2><ul>
+<li><p>git提供了一个stash功能可以把当前工作现场（分支）保存起来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br></pre></td></tr></table></figure>
+<p>若要查看上一次保存的工作现场，可以使用<code>git stash list</code>命令</p>
+</li>
+<li><p>恢复现场方法（两种）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git stash apply</span><br><span class="line">$ git stash drop</span><br><span class="line"></span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<p>第一种是先恢复，再把stash中的内容也删掉<br>第二种是再恢复的同时把stash中的内容也删掉</p>
+</li>
+<li><p>将在其他分支上所做的修改提交合并到当前分支上<br><code>$ git cherry-pick &lt;commit&gt;</code></p>
+</li>
+</ul>
+<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><p>当我们从远程仓库克隆时，实际上git自动会把本地的master分支和远程的master分支对应起来，并且，远程仓库的默认名称是origin</p>
+<ul>
+<li>查看远程库的信息：<br><code>$ git  remote</code><br>若要显示更加详细的信息，可以填加-v参数<h3 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h3>把该分支上的所有本地提交推送到远程库。推送时，要制定本地分支<br><code>$ git push origin &lt;branshname&gt;</code><br>分支的推送按需求决定<h3 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h3></li>
+<li>将远程库的最新提交给抓取下来到本地库<br><code>$ git pull</code></li>
+<li>在本地建立和远程分支对应的分支<br><code>$ git checkout  -b branch-name origin/branch-name</code></li>
+<li>建立本地分支和远程分支的关联<br><code>git branch --set-upstream branch-name origin/branch-name</code></li>
+</ul>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git tag &lt;tagname&gt; <span class="comment">#1</span></span><br><span class="line">$ git tag -a &lt;tagename&gt; -m <span class="string">"shuomingxingxi"</span> <span class="comment">#2</span></span><br><span class="line">$ git tag <span class="comment">#3</span></span><br></pre></td></tr></table></figure>
+<p>第一条命令用于创建一个标签，默认是HEAD，也可以致电给一个commit id<br>第二条命令用于创建一个带有说明信息的标签<br>第三条命令用于查看所有标签，也可用<code>git show &lt;tagname&gt;</code>命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -d &lt;tagname&gt; <span class="comment">#1</span></span><br><span class="line">$ git push origin &lt;tagname&gt; <span class="comment">#2</span></span><br><span class="line">$ git push origin --tags <span class="comment">#3</span></span><br><span class="line">$ git push origin :refs/tags/&lt;tagname&gt; <span class="comment">#4</span></span><br></pre></td></tr></table></figure>
+<p>命令1：删除一个本地标签<br>命令2：推送一个本地标签<br>命令3：推送全部未推送过的本地标签<br>命令4：删除一个远程标签</p>
 
       
     </div>
@@ -319,30 +377,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Spring-Boot-笔记"><a href="#Spring-Boot-笔记" class="headerlink" title="Spring Boot 笔记"></a>Spring Boot 笔记</h1><h2 id="1-springboot-入门简介"><a href="#1-springboot-入门简介" class="headerlink" title="1.springboot 入门简介"></a>1.springboot 入门简介</h2><blockquote>
-<p>spring boot 是简化spring应用开发的一个框架；<br>是整个spring技术栈的一个大整合；<br>J2EE的一站式解决方案；</p>
-</blockquote>
-<h2 id="2-微服务"><a href="#2-微服务" class="headerlink" title="2.微服务"></a>2.微服务</h2><p>2014，Martin fowler</p>
-<p>微服务：架构风格（服务微化）</p>
-<p>一个应用应该是一组小型服务；可以通过HTTP的方式进行互通；</p>
-<p>每一个功能元素最终都是一个可独立替换和独立升级的软件单元；</p>
-<h2 id="3-环境准备"><a href="#3-环境准备" class="headerlink" title="3.环境准备"></a>3.环境准备</h2><h3 id="掌握"><a href="#掌握" class="headerlink" title="掌握"></a>掌握</h3><blockquote>
-<p>spring4框架的使用经验</p>
-<p>熟练使用Maven进行项目构建和依赖管理</p>
-<p>熟练使用Eclipse或者IDEA</p>
-</blockquote>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><blockquote>
-<p>java jdk1.8</p>
-<p>maven</p>
-<p>IDEA</p>
-<p>springboot </p>
-</blockquote>
-<h2 id="4-Spring-Boot-HelloWorld"><a href="#4-Spring-Boot-HelloWorld" class="headerlink" title="4.Spring Boot HelloWorld"></a>4.Spring Boot HelloWorld</h2><p>功能：</p>
-<p>浏览器发送hello请求，服务器接收请求并处理，相应Hello World字符串</p>
+        <h1 id="Spring-Boot-笔记"><a href="#Spring-Boot-笔记" class="headerlink" title="Spring Boot 笔记"></a>Spring Boot 笔记</h1><h2 id="1-springboot-入门简介"><a href="#1-springboot-入门简介" class="headerlink" title="1.springboot 入门简介"></a>1.springboot 入门简介</h2><ul>
+<li>spring boot 是简化spring应用开发的一个框架；</li>
+<li>是整个spring技术栈的一个大整合；</li>
+<li>J2EE的一站式解决方案；</li>
+</ul>
+<h2 id="2-微服务"><a href="#2-微服务" class="headerlink" title="2.微服务"></a>2.微服务</h2><ul>
+<li>2014，Martin fowler</li>
+<li>微服务：架构风格（服务微化）</li>
+<li>一个应用应该是一组小型服务；可以通过HTTP的方式进行互通；</li>
+<li>每一个功能元素最终都是一个可独立替换和独立升级的软件单元；</li>
+</ul>
+<h2 id="3-环境准备"><a href="#3-环境准备" class="headerlink" title="3.环境准备"></a>3.环境准备</h2><h3 id="掌握"><a href="#掌握" class="headerlink" title="掌握"></a>掌握</h3><ul>
+<li>spring4框架的使用经验</li>
+<li>熟练使用Maven进行项目构建和依赖管理</li>
+<li>熟练使用Eclipse或者IDEA</li>
+</ul>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
+<li>java jdk1.8</li>
+<li>maven</li>
+<li>IDEA</li>
+<li>springboot </li>
+</ul>
+<h2 id="4-Spring-Boot-HelloWorld"><a href="#4-Spring-Boot-HelloWorld" class="headerlink" title="4.Spring Boot HelloWorld"></a>4.Spring Boot HelloWorld</h2><p>功能：浏览器发送hello请求，服务器接收请求并处理，相应Hello World字符串</p>
 <h3 id="1）创建一个maven工程-（jar）"><a href="#1）创建一个maven工程-（jar）" class="headerlink" title="1）创建一个maven工程 （jar）"></a>1）创建一个maven工程 （jar）</h3><h3 id="2）导入SpringBoot相关的依赖"><a href="#2）导入SpringBoot相关的依赖" class="headerlink" title="2）导入SpringBoot相关的依赖"></a>2）导入SpringBoot相关的依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">gruouID</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">gruouID</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.9.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="3-编写一个主程序，启动springboot应用"><a href="#3-编写一个主程序，启动springboot应用" class="headerlink" title="3)编写一个主程序，启动springboot应用"></a>3)编写一个主程序，启动springboot应用</h3>
       
     </div>
